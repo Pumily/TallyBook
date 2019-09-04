@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/mbook/mbook",
+    "pages/user/user",
+    "pages/index/index",
+    "pages/index/login",
+    "pages/logs/logs",
+    "pages/show/show",
+    "pages/cards/cards",
+    "pages/cards/addcard",
+    "pages/mbook/addwater",
+    "pages/mbook/mdetail",
+    "pages/text/sendm",
+    "pages/cards/carditem",
+    "pages/shop/shop",
+    "pages/zhangdan/list",
+    "pages/help/help",
+    "pages/help/about",
+    "pages/jifen/list",
+    "pages/help/jz"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智慧记账本",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "imges/jizhang.png",
+        "iconPath": "imges/jizhang.png",
+        "pagePath": "pages/mbook/mbook",
+        "text": "记账"
+      },
+      {
+        "selectedIconPath": "imges/user.png",
+        "iconPath": "imges/user.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  }
+}

@@ -1,0 +1,103 @@
+.container {
+  width: 100%;
+  height: 70rpx;
+  background: #fff;
+  margin: 10rpx auto 0;
+}
+
+.header {
+  color: #444;
+}
+
+.detailed {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 0;
+  position: relative;
+  border-bottom: 0.5px solid #ededed;
+}
+
+.detailed view {
+  float: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.detailed view:nth-child(1) {
+  color: #666;
+  font-size: 26rpx;
+  width: 16%;
+}
+
+.detailed view:nth-child(2) {
+  width: 28%;
+}
+
+.detailed view:nth-child(3) {
+  width: 28%;
+}
+
+.detailed view:nth-child(4) {
+  width: 28%;
+}
+
+.showbox {
+  height: 320rpx;
+  background-size: 100% 100%;
+  color: #fff;
+  clear: both;
+  width: 100%;
+  z-index: 100;
+  /* background-color: rgba(255,255,255,.5); */
+}
+
+.showbox-top {
+  text-align: center;
+}
+
+.s-t-money {
+  font-size: 2rem;
+  font-family: 'KaiTi';
+  padding: 30rpx 0 10rpx;
+}
+
+.s-t-money-box image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.s-t-tag {
+  font-size: 0.8rem;
+  margin-top: 10rpx;
+}
+
+.s-t-tag-box {
+  border-radius: 50rpx;
+  padding: 5rpx 20rpx;
+}
+
+.s-t-tag-box image {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.showbox-down {
+  margin-top: 35rpx;
+}
+
+.s-d-item {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.s-d-item-top {
+  font-family: 'KaiTi';
+  font-size: 1.2rem;
+}
+
+.s-d-item-down {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,73 @@
+<!--pages/mbook/mdetail.wxml-->
+<view class='m-list'>
+  <view class='m-l-left'>
+    <view class='iconfont-box m-l-timg' style='background-color: {{mdetail.tagbg}}'>
+      <label class='iconfont {{mdetail.tagimg}}'></label>
+    </view>
+  </view>
+  <view class='m-l-right'>
+    <view class='m-l-tagname'>
+      {{mdetail.tag}}
+    </view>
+    <view class='m-l-money'>
+      {{mdetail.money}}
+    </view>
+  </view>
+</view>
+<view class='zhanwei'></view>
+
+<view class='detail'>
+  <view class='detail-item'>
+    <view class='detail-item-left'>
+      类型
+    </view>
+    <view class='detail-item-right'>
+      {{mdetail.type}}
+    </view>
+  </view>
+  <view class='detail-item'>
+    <view class='detail-item-left'>
+      金额
+    </view>
+    <view class='detail-item-right'>
+      {{mdetail.money}}
+    </view>
+  </view>
+  <view class='detail-item'>
+    <view class='detail-item-left'>
+      账户
+    </view>
+    <view class='detail-item-right'>
+      {{mdetail.cardname}}
+    </view>
+  </view>
+  <view class='detail-item'>
+    <view class='detail-item-left'>
+      记录时间
+    </view>
+    <view class='detail-item-right'>
+      {{mdetail.createtime}}
+    </view>
+  </view>
+  <view class='detail-item'>
+    <view class='detail-item-left'>
+      备注
+    </view>
+    <view class='detail-item-right'>
+      {{mdetail.remark}}
+    </view>
+  </view>
+</view>
+
+<view class='content btnbox'>
+  <view class='btnitem1'>
+    <button bindtap="delwater" class='btnsive' hover-class="btnsive-hover" data-id='{{mdetail.id}}'>
+      删除
+    </button>
+  </view>
+  <view class='btnitem2'>
+    <button bindtap="updatewater" class='btnsive' hover-class="btnsive-hover" data-mdetail='{{mdetail}}'>
+      编辑
+    </button>
+  </view>
+</view>

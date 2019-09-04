@@ -1,0 +1,85 @@
+<!--mbook.wxml-->
+<view class='mbook'>
+  <view class='setbox'>
+    <image bindtap='setclick' src='/imges/set.png'></image>
+  </view>
+  <view class="showbox" style='height: {{topHeight}}px;background: url({{homeimg}}) no-repeat;background-size: 100% 100%;color: {{homecolor}};'>
+    <view class='showbox-top'>
+      <view class='s-t-money'>
+        <label class='s-t-money-box'>
+          {{jieyu}}
+        </label>
+      </view>
+      <view class='s-t-tag'>
+        <picker class="rili-box" mode="date" fields="month" value='{{yearmonthstr}}' bindchange="sltyearmonth">
+          <label class='s-t-tag-box' style='border: 1px solid {{homecolor}};'>
+            {{yearmonth}} 资金结余</label>
+        </picker>
+      </view>
+    </view>
+    <view class='showbox-down'>
+      <view class='s-d-item'>
+        <view class='s-d-item-top'>
+          {{sumin}}
+        </view>
+        <view class='s-d-item-down'>
+          本月收入
+        </view>
+      </view>
+      <view class='s-d-item'>
+        <view class='s-d-item-top'>
+          {{sumout}}
+        </view>
+        <view class='s-d-item-down'>
+          本月支出
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='xxjtbox' style='display:{{xljt}}'>
+    <view class='topbox'>
+      <image src='/imges/xxjt.png' bindtap="reloaddata"></image>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" class='mbox' style='height: {{scrollHeight}}px;' bindscrolltolower='searchScrollLower' bindscrolltoupper="bindscrolltoupper">
+    <view class='reloadbox' style='display:{{reload}}'>
+      <view class='topbox'>
+        <image src='/imges/reload.png' bindtap="reloaddata"></image>
+      </view>
+      <view class='downbox'>
+        <label bindtap="reloaddata">重新加载</label>
+      </view>
+    </view>
+  <wux-notice-bar mode="closable" content="点击·•·添加到我的小程序，使用更方便" />
+
+    <view class='mbox-item' wx:for="{{list}}" wx:key="date" wx:for-index="groupindex">
+      <view class='m-t-title'>
+        <view class='m-t-t-left'>{{item.date}}</view>
+        <view class='m-t-t-right'>收入:{{item.dayin}} 支出:{{item.dayout}}</view>
+      </view>
+      <view class='m-list' wx:for="{{item.mwters}}" wx:key="id" wx:for-item="cell" wx:for-index="cellindex">
+        <view bindtap='waterdetail' data-id='{{cell.id}}'>
+          <view class='m-l-left'>
+            <view class='iconfont-box m-l-timg' style='background-color: {{cell.tagbg}}'>
+              <label class='iconfont {{cell.tagimg}}'></label>
+            </view>
+          </view>
+          <view class='m-l-right'>
+            <view class='m-l-tagname'>
+              {{cell.tag}}
+              <label class='m-l-tagremark'>{{cell.remark}}</label>
+            </view>
+            <view class='m-l-money'>
+              {{cell.money}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class='addwater'>
+    <image class='addimg' bindtap="addwater" src='/imges/addwater.png'></image>
+  </view>
+</view>

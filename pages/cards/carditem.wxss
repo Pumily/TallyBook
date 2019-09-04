@@ -1,0 +1,27 @@
+/* pages/cards/carditem.wxss */
+
+.carditembox{
+  width: 100%;
+  margin-top:10rpx;
+}
+
+.carditembox .item{
+  float: left;
+  width: 25%;
+  text-align: center;
+  margin: 20rpx 0;
+}
+
+.item-top{
+
+}
+
+.timg{
+  width: 40px;
+  height: 40px;
+}
+
+.item-down{
+  font-size: 14px;
+  color: #444;
+}

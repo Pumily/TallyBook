@@ -1,0 +1,8 @@
+{
+  "disableScroll": true,
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "wux-notice-bar": "../../dist/notice-bar/index"
+  }
+}

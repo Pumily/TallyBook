@@ -1,0 +1,35 @@
+<!--pages/cards/carditem.wxml-->
+<view class="content">
+  <view class='carditembox'>
+    <view class='item' bindtap="sltcarditem" data-item='1' data-img='cards_zxzf'>
+      <view class='item-top'>
+        <image class='timg' src='/imges/cards_zxzf.png'></image>
+      </view>
+      <view class='item-down'>在线支付</view>
+    </view>
+    <view class='item' bindtap="sltcarditem" data-item='2' data-img='cards_cxk'>
+      <view class='item-top'>
+        <image class='timg' src='/imges/cards_cxk.png'></image>
+      </view>
+      <view class='item-down'>储蓄卡</view>
+    </view>
+    <view class='item' bindtap="sltcarditem" data-item='3' data-img='cards_xyk'>
+      <view class='item-top'>
+        <image class='timg' src='/imges/cards_xyk.png'></image>
+      </view>
+      <view class='item-down'>信用卡</view>
+    </view>
+    <view class='item' bindtap="sltcarditem" data-item='4' data-img='cards_czk'>
+      <view class='item-top'>
+        <image class='timg' src='/imges/cards_czk.png'></image>
+      </view>
+      <view class='item-down'>储值卡</view>
+    </view>
+    <view class='item' bindtap="sltcarditem" data-item='5' data-img='cards_xjzh'>
+      <view class='item-top'>
+        <image class='timg' src='/imges/cards_xjzh.png'></image>
+      </view>
+      <view class='item-down'>现金账户</view>
+    </view>
+  </view>
+</view>

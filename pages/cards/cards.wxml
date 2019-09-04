@@ -1,0 +1,52 @@
+<!--cards.wxml-->
+<view class="content">
+  <view class="cardlist">
+    <view class="carditem" wx:for="{{list}}" wx:key="key">
+      <view bindtap='carddetail' data-id='{{item.id}}' data-carditem='{{item.type}}'>
+        <view class="top">
+          <view class="t-left">{{item.jiancheng}}
+          </view>
+          <view class="t-right">
+            <view class="c-name">
+              <view class='c-name-1'>
+                {{item.cardname}}
+              </view>
+              <view class='c-name-2'>
+                <label class='c-name-zjxf'>{{item.zoushang}}</label>
+              </view>
+            </view>
+            <view class='c-name'>
+              <label wx:if="{{item.type==3}}">
+                <label class='t-r-item'>
+                  <label class="t-r-i-z">账单日:{{item.zhangdanri}}</label>
+                </label>
+                <label class='t-r-item'>
+                  <label class="t-r-i-z">还款日:{{item.huikuanri}}</label>
+                </label>
+              </label>
+              <label class='c-xyk-tag'>{{item.weihao}}</label>
+            </view>
+          </view>
+        </view>
+        <view class='center'>
+          {{item.remark}}
+        </view>
+        <view class="down">
+          <view class="d-item">
+            <label>额度:</label>
+            <label>{{item.gudingmoney}}</label>
+          </view>
+          <view class="d-item">
+            <label>已用:</label>
+            <label>{{item.yiyongmoney}}</label>
+          </view>
+          <view class="d-item">
+            <label>可用:</label>
+            <label>{{item.keyongmoney}}</label>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button type="primary" class="addcrad" bindtap="addcard"> 添加账户 </button>
+</view>

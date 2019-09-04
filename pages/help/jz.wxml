@@ -1,0 +1,2 @@
+<!--pages/help/jz.wxml-->
+<button bindtap='zhifu'>支付</button>

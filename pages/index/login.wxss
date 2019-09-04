@@ -1,0 +1,53 @@
+/* pages/mbook/login.wxss */
+/**index.wxss**/
+@import "/svgs.wxss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: url('http://tooapi.tooao.cn/images/p6.png') no-repeat;
+  background-size: 100% auto;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.loginbox {
+  position: absolute;
+  align-items: center;
+  bottom: 130rpx;
+}
+
+.loginbox-item{
+  text-align: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.userinfo-nickname::after{  
+  border:0px;  
+}  
+
+.usershow{
+  display: flex;
+  flex-direction: column;
+  
+  background-color: #f0f0f0;
+}

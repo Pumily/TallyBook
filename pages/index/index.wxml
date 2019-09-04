@@ -1,0 +1,126 @@
+<!--index.wxml-->
+<!-- 未登录状态显示 -->
+<block wx:if="{{!hasUserInfo && canIUse}}">
+  <view class='container user-login' style='height: {{scrollHeight}}px;'>
+    <view class='loginbox'>
+      <view class='loginbox-item'>
+        <image class="userinfo-avatar" src="/imges/touxiang.png" background-size="cover"></image>
+      </view>
+      <view class='loginbox-item'>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="userinfo-nickname">点击登陆</button>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 登陆后 -->
+<block wx:else>
+  <view class='user-style'>
+    <view class="container">
+      <view class='user-left'>
+        <image bindtap="bindViewTap" class="user-left-img" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      </view>
+      <view class='user-right'>
+        <text class="">{{userInfo.nickName}}</text>
+        <!-- <image class='jt-right' src='/imges/jt-right.png'></image> -->
+      </view>
+    </view>
+
+  </view>
+  <view class='zhanwei'></view>
+  <view class='user-menu'>
+    <view class='user-menu-item'>
+      <view class='user-menu-item-top'>
+        1
+      </view>
+      <view class='user-menu-item-down'>
+        连续打卡天数
+      </view>
+    </view>
+    <view class='user-menu-item'>
+      <view class='user-menu-item-top'>
+        1
+      </view>
+      <view class='user-menu-item-down'>
+        总记账天数
+      </view>
+    </view>
+    <view class='user-menu-item'>
+      <view class='user-menu-item-top'>
+        1
+      </view>
+      <view class='user-menu-item-down'>
+        总记账笔数
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" style='height:500px;'>
+    <view class='zhanwei'></view>
+    <view class='user-item'>
+      <view class='user-list'>
+        <view class='user-l-left'>
+          <view class='iconfont-box user-l-timg' style='color: #ff7d48;'>
+            <label class='iconfont icon-icon'></label>
+          </view>
+        </view>
+        <view class='user-l-right'>
+          <view class='user-l-tagname'>
+            积分任务
+          </view>
+          <view class='user-l-money'>
+            <image class='jt-right' src='/imges/jt-right.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='user-list'>
+        <view class='user-l-left'>
+          <view class='iconfont-box user-l-timg' style='color: #ff7d48;'>
+            <label class='iconfont icon-kuaiqiang'></label>
+          </view>
+        </view>
+        <view class='user-l-right'>
+          <view class='user-l-tagname'>
+            积分商城
+          </view>
+          <view class='user-l-money'>
+            <image class='jt-right' src='/imges/jt-right.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='zhanwei'></view>
+    <view class='user-item'>
+      <view class='user-list'>
+        <view class='user-l-left'>
+          <view class='iconfont-box user-l-timg' style='color: #7299a7;'>
+            <label class='iconfont icon-bianji'></label>
+          </view>
+        </view>
+        <view class='user-l-right'>
+          <view class='user-l-tagname'>
+            意见反馈
+          </view>
+          <view class='user-l-money'>
+            <image class='jt-right' src='/imges/jt-right.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='user-list'>
+        <view class='user-l-left'>
+          <view class='iconfont-box user-l-timg' style='color: #7299a7;'>
+            <label class='iconfont icon-shezhi'></label>
+          </view>
+        </view>
+        <view class='user-l-right'>
+          <view class='user-l-tagname'>
+            设置
+          </view>
+          <view class='user-l-money'>
+            <image class='jt-right' src='/imges/jt-right.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='zhanwei'></view>
+  </scroll-view>
+</block>

@@ -1,0 +1,113 @@
+/* pages/mbook/mdetail.wxss */
+@import "/svgs.wxss";
+
+.m-list {
+  height: 60px;
+  line-height: 60px;
+  clear: both;
+  vertical-align: middle;
+}
+
+/* .m-list:hover {
+  background-color: #f0f0f0;
+} */
+
+.m-l-left {
+  float: left;
+  /* padding: 8px 10px 0; */
+  width: 17%;
+  /* text-align: center; */
+}
+
+.m-l-timg {
+  background-color: #f6c142;
+  margin: 8px 10px 0;
+}
+
+.m-l-right {
+  width: 83%;
+  float: left;
+}
+
+.m-l-tagname {
+  float: left;
+}
+
+.m-l-money {
+  float: right;
+  padding-right: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.detail {
+  padding: 0 10px;
+}
+
+.detail-item {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+
+.detail-item-left {
+  float: left;
+}
+
+.detail-item-right {
+  float: right;
+}
+
+.btnbox {
+  clear: both;
+  margin-top: 20px;
+}
+
+.btnitem1 {
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+
+.btnitem2 {
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+
+.btnsive {
+  border-radius: 4px;
+  width: 150px;
+  margin: 0 auto;
+}
+
+.btnitem1 .btnsive {
+  /* border: 1px solid #f6c142; */
+  background-color: #fff;
+  color: #f6c142;
+  height: 40px;
+  line-height: 40px;
+}
+
+.btnitem1 .btnsive-hover {
+  background-color: #f0f0f0;
+}
+
+.btnitem1 .btnsive::after {
+  border: 1px solid #f6c142;
+}
+
+.btnitem2 .btnsive {
+  background-color: #f6c142;
+  color: #fff;
+  height: 42px;
+  line-height: 42px;
+}
+
+.btnitem2 .btnsive-hover {
+  background-color: #f4d95b;
+}
+
+.btnitem2 .btnsive::after {
+  border: none;
+}

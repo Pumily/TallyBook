@@ -1,0 +1,41 @@
+/**app.wxss**/
+
+.content {
+  padding: 0 5px;
+}
+
+.hide{
+  display: none;
+}
+
+/* .b-bottom {
+    background: url('/imges/f0f0f0.png') repeat-x bottom;
+} */
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  color: transparent;
+}
+
+.jt-right{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.zhanwei {
+  width: 100%;
+  height: 10rpx;
+  background-color: #f0f0f0;
+}
+
+.nobtn {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0;
+  margin:0;
+}
+
+.nobtn:after {
+  display: none;
+}

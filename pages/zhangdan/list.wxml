@@ -1,0 +1,49 @@
+<view class="showbox" style='background: url({{homeimg}}) no-repeat;background-size: 100% 100%;color: {{homecolor}};'>
+  <view class='showbox-top'>
+    <view class='s-t-money'>
+      <label class='s-t-money-box'>
+        {{summoney}}
+      </label>
+    </view>
+    <view class='s-t-tag'>
+      <picker class="rili-box" mode="date" fields="year" value='{{yearstr}}' bindchange="sltyearmonth">
+        <label class='s-t-tag-box' style='border: 1px solid {{homecolor}};'>
+          {{yearstr}} 资金结余</label>
+      </picker>
+    </view>
+  </view>
+  <view class='showbox-down'>
+    <view class='s-d-item'>
+      <view class='s-d-item-top'>
+        {{sumshouru}}
+      </view>
+      <view class='s-d-item-down'>
+        本年收入
+      </view>
+    </view>
+    <view class='s-d-item'>
+      <view class='s-d-item-top'>
+        {{sumzhichu}}
+      </view>
+      <view class='s-d-item-down'>
+        本年支出
+      </view>
+    </view>
+  </view>
+</view>
+<view class='container'>
+  <view class='detailed' style='color:#666'>
+    <view>月份</view>
+    <view>收入</view>
+    <view>支出</view>
+    <view>结余</view>
+  </view>
+</view>
+<view class='container' wx:for="{{list}}" wx:key="*this">
+  <view class='detailed'>
+    <view>{{item.yufen}}</view>
+    <view>{{item.shouru}}</view>
+    <view>{{item.zhichu}}</view>
+    <view>{{item.jieyu}}</view>
+  </view>
+</view>

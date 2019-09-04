@@ -1,0 +1,8 @@
+
+<view class='container' wx:for="{{list}}" wx:key="*this">
+  <view class='detailed'>
+    <view>{{item.remark}}</view>
+    <view>{{item.createtime}}</view>
+    <view><label wx:if="{{item.type==1}}">+</label><label wx:else>-</label>{{item.number}}</view>
+  </view>
+</view>

@@ -1,0 +1,94 @@
+<!--pages/cards/addcard.wxml-->
+<view class="content">
+  <view class='cardbox'>
+    <view class='cardbox-item'>
+      <image class='cardbox-img' src='/imges/{{cardimg}}.png'></image>
+    </view>
+    <form bindsubmit="formSubmit">
+      <view class="t-item">
+        <view class='t-item-left'>
+          账户名称
+        </view>
+        <view class='t-item-right'>
+          <input name='cardname' placeholder="账户名称" maxlength="10" value='{{cardinfo.cardname}}' auto-focus/>
+        </view>
+      </view>
+      <view class="t-item" style='display:{{gded_hide}};'>
+        <view class='t-item-left'>
+          固定额度
+        </view>
+        <view class='t-item-right'>
+          <input name='gudingmoney' type="digit" placeholder="0.00" value='{{cardinfo.gudingmoney}}' maxlength="10" />
+        </view>
+      </view>
+      <view class="t-item" style='display:{{yyed_hide}};'>
+        <view class='t-item-left'>
+          已用额度
+        </view>
+        <view class='t-item-right'>
+          <input name='yiyongmoney' type="digit" placeholder="已用额度" value='{{cardinfo.yiyongmoney}}' maxlength="10" />
+        </view>
+      </view>
+      <view class="t-item" style='display:{{kyed_hide}};'>
+        <view class='t-item-left'>
+          {{gded_txt}}
+        </view>
+        <view class='t-item-right'>
+          <input name='keyongmoney' type="digit" placeholder="可用额度" value='{{cardinfo.keyongmoney}}' />
+        </view>
+      </view>
+      <view class="t-item" style='display:{{zdr_hide}};'>
+        <view class='t-item-left'>
+          账单日
+        </view>
+        <view class='t-item-right'>
+          <input name='zhangdanri' type="number" maxlength='2' placeholder="账单日" value='{{cardinfo.zhangdanri}}' />
+        </view>
+      </view>
+      <view class="t-item" style='display:{{hkr_hide}};'>
+        <view class='t-item-left'>
+          还款日
+        </view>
+        <view class='t-item-right'>
+          <input name='huikuanri' type="number" maxlength='2' placeholder="还款日" value='{{cardinfo.huikuanri}}' />
+        </view>
+      </view>
+      <view class="t-item" style='display:{{yhkh_hide}};'>
+        <view class='t-item-left'>
+          卡号
+        </view>
+        <view class='t-item-right'>
+          <input name='weihao' type="number" maxlength='4' placeholder="请填写卡号后四位" value='{{cardinfo.weihao}}' />
+        </view>
+      </view>
+      <view class="t-item">
+        <view class='t-item-left'>
+          备注
+        </view>
+        <view class='t-item-right'>
+          <input name='remark' maxlength='20' placeholder="备注说明" value='{{cardinfo.remark}}' />
+        </view>
+      </view>
+      <view class='savecradbox' style='display:{{add_hide}};'>
+        <button formType="submit" type="primary" class="savecrad" loading="{{loading}}" bindtap="savecrad"> 保存 </button>
+      </view>
+      <view class='content btnbox' style='display:{{update_hide}};'>
+        <view class='btnitem1'>
+          <button bindtap="delcard" class='btnsive' hover-class="btnsive-hover" data-cardid='{{cardinfo.id}}'>
+            删除
+          </button>
+        </view>
+        <view class='btnitem2'>
+          <button formType="submit" type="primary" class='btnsive' loading="{{loading}}" hover-class="btnsive-hover">
+            保存
+          </button>
+        </view>
+      </view>
+      <view class="hide">
+        <input name='user' value='{{openid}}' />
+        <input name='id' value='{{cardinfo.id}}' />
+        <input name='type' value='{{cardtype}}' />
+      </view>
+    </form>
+  </view>
+</view>

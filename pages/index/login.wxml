@@ -1,0 +1,11 @@
+<!--pages/mbook/login.wxml-->
+<view class='container' style='height: {{scrollHeight}}px;'>
+  <view class='loginbox'>
+    <view class='loginbox-item'>
+      <image class="userinfo-avatar" src="/imges/touxiang.png" background-size="cover"></image>
+    </view>
+    <view class='loginbox-item'>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="userinfo-nickname">点击登陆</button>
+    </view>
+  </view>
+</view>
