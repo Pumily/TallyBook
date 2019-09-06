@@ -17,7 +17,7 @@ Page({
     sumout: "0.00",
     scrollHeight: 0,
     topHeight: 0,
-    homeimg: 'https://tooapi.tooao.cn/images/4.jpg',
+    homeimg: '/imges/3.jpg',
     homecolor: '#fff',
     reload: "none",
     xljt: "none"

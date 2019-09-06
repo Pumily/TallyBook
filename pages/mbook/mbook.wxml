@@ -51,7 +51,6 @@
         <label bindtap="reloaddata">重新加载</label>
       </view>
     </view>
-  <wux-notice-bar mode="closable" content="点击·•·添加到我的小程序，使用更方便" />
 
     <view class='mbox-item' wx:for="{{list}}" wx:key="date" wx:for-index="groupindex">
       <view class='m-t-title'>

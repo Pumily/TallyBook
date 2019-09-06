@@ -88,7 +88,7 @@ App({
   siteInfo: require("siteinfo.js"),
   globalData: {
     userInfo: null,
-    apiurl: "http://localhost:13281/",
+    apiurl: "",
     openid: ""
   }
 })

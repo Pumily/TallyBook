@@ -21,25 +21,20 @@
   </view>
   <view class='content'>
     <scroll-view class='jz-item' scroll-y='true'>
-      <view class='jz-item-img' wx:for="{{iconlist}}" wx:key="id">
+      <!-- <view class='jz-item-img' wx:for="{{iconlist}}" wx:key="id"> -->
         <view id='tag{{item.id}}' bindtap='clickimgs' data-tagname='{{item.name}}' data-tagicon='{{item.icon}}' data-tagid='{{item.id}}' data-tagcolor='{{item.iconcolor}}'>
           <view class='jz-imgs' style='{{item.id==tag_action_id? ("background-color:"+item.iconcolor+";color:#fff") :""}}'>
-            <text class="iconfont {{item.icon}}"></text>
+            <text class="iconfont {{item.icon}} icon-qita"></text>
           </view>
           <view class='jz-tag'>{{item.name}}</view>
         </view>
-      </view>
+      <!-- </view> -->
     </scroll-view>
   </view>
   <view class='jz-gj'>
     <view class='rili'>
       <picker class="rili-box" mode="date" value="{{date}}" bindchange="bindDateChange">
         {{date}}
-      </picker>
-    </view>
-    <view class='cardslt'>
-      <picker class="rili-box" value="{{cardindex}}" range="{{cardarray}}" range-key="name" bindchange="bindCardsChange">
-        {{cardarray[cardindex].name}}
       </picker>
     </view>
     <view class='remark'>
@@ -65,7 +60,6 @@
       <input name='tagimg' value='{{nav_icon}}' />
       <input name='tagid' value='{{tagid}}' />
       <input name='date' value='{{date}}' />
-      <input name='cardid' value='{{cardid}}' />
     </view>
   </view>
 </form>

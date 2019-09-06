@@ -166,50 +166,12 @@ Page({
     } catch (e) {
 
     }
-
-    // 获取卡片详情
-    wx.request({
-      url: app.siteInfo.apiurl + '/mbook/GetCardList',
-      data: { user: app.globalData.openid },
-      header: { 'content-type': 'application/json' },
-      success: function (res) {
-        var cardlist = res.data.message;
-        //console.log(cardlist);
-        var _cardarray = [];
-        _cardarray.push({
-          id: 0,
-          value: 0,
-          name: "选择账户"
-        });
-        for (var i = 0; i < cardlist.length; i++) {
-          _cardarray.push({
-            id: i + 1,
-            value: cardlist[i].id,
-            name: cardlist[i].cardname
-          });
-        }
-        obj.setData({
-          cardarray: _cardarray,
-        });
-        console.log(_cardarray);
-      }
-    });
-
   },
 
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail);
     this.setData({
       date: e.detail.value
-    })
-  },
-
-  // 选择银行卡
-  bindCardsChange: function (e) {
-    console.log(e);
-    this.setData({
-      cardindex: e.detail.value,
-      cardid: this.data.cardarray[e.detail.value].value
     })
   },
 
