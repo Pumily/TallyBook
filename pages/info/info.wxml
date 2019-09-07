@@ -1,0 +1,20 @@
+<!--pages/info/info.wxml-->
+<view class="page">
+  <view class="page_hd">
+  </view>
+  <view class="page_bd">
+   <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">头像</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">
+                    <image class="picture" src="../../imges/t1.jpg" style="margin-right: 5px;vertical-align: middle;width:35px; height: 35px;border-"></image>
+                </view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">昵称</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access list_right">大财主12121</view>
+            </navigator>
+        </view>
+  </view>
+</view>
+

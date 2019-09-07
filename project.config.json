@@ -12,6 +12,8 @@
 	"appid": "wxcf7f15b21779b77f",
 	"projectname": "TallyBook",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

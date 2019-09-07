@@ -21,7 +21,7 @@ Page({
 
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
-      backgroundColor: '#f47667',
+      backgroundColor: '#0066BA',
     });
     var obj = this;
     if (app.globalData.userInfo) {
@@ -53,17 +53,10 @@ Page({
     })
   },
 
-  // 我的积分
-  gojifen: function() {
+  // 我的账单
+  goinfo: function () {
     wx.navigateTo({
-      url: '../jifen/list'
-    })
-  },
-
-  // 我的卡包
-  gocards: function() {
-    wx.navigateTo({
-      url: '../cards/cards'
+      url: '../info/info'
     })
   },
 
