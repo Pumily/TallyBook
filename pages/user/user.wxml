@@ -1,6 +1,6 @@
 <!--logs.wxml-->
 <view class="header">
-  <image class="header_back" src="../../imges/background2.png"></image>
+  <image class="header_back" src="../../imges/b3.jpg"></image>
   <view class="header_box">
     <!-- <view class="header_set">
       <image bindtap='address' src="../../imges/set.png"></image>
@@ -8,7 +8,7 @@
     <button open-type="getUserInfo" class='nobtn' lang="zh_CN" bindgetuserinfo="onGotUserInfo">
       <view class="flex3">
         <view style='height:160rpx;'>
-          <image class="picture" src="{{userimg}}"></image>
+          <image class="picture" src="../../imges/t1.jpg"></image>
         </view>
         <view class="header_name">
           <label wx:if="{{nickname==''}}">未登录</label>
@@ -21,18 +21,17 @@
 <!--订单部分开始  -->
 <view class="list" wx:if="{{1==1}}">
   <view class="list_content">
-    <view class="list_top flex-bet">
+    <view class="list_top flex-bet" bindtap='goinfo'>
       <view class="list_all flex-center">
         <image class="list_allimg" src="../../imges/order.png"></image>
         <view class="list_alltext">我的信息</view>
-      </view>
+       </view>
+     <view class="list_alllist flex-center">
+      <image class="list_right" src="../../imges/huise@2x.png"></image>
+     </view>
 
     </view>
     <view class="list_fukuan flex-bet">
-      <view class="flex3 list_collet">
-        <view class="list_fukuanimg">{{jifen}}</view>
-        <view class="">我的积分</view>
-      </view>
       <view class="flex3 list_collet">
         <view class="list_fukuanimg">{{lianxuday}}</view>
         <view class="">连续天数</view>
@@ -64,33 +63,7 @@
       <image class="list_right" src="../../imges/huise@2x.png"></image>
     </view>
   </view>
-  <view class="banner_list flex-bet" bindtap='gocards'>
-    <view class="list_all flex-center">
-      <image class="list_allimg" src="../../imges/cardbao.png"></image>
-      <view class="list_alltext">我的卡包</view>
-    </view>
-    <view class="list_alllist flex-center">
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-    </view>
-  </view>
-  <view class="banner_list flex-bet" bindtap='gojifen'>
-    <view class="list_all flex-center">
-      <image class="list_allimg" src="../../imges/qianbao.png"></image>
-      <view class="list_alltext">我的积分</view>
-    </view>
-    <view class="list_alllist flex-center">
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-    </view>
-  </view>
-  <view class="banner_list flex-bet" bindtap='yellow_page' wx:if="{{2==1}}">
-    <view class="list_all flex-center">
-      <image class="list_allimg" src="../../imges/mine_yellow.png"></image>
-      <view class="list_alltext">我的114</view>
-    </view>
-    <view class="list_alllist flex-center">
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-    </view>
-  </view>
+  
 </view>
 <!--我的收藏部分结束  -->
 
@@ -100,12 +73,12 @@
     <button open-type="contact" session-from="weapp" class='nobtn'>
       <view class="list_all flex-center">
         <image class="list_allimg" src="../../imges/kefu.png"></image>
-        <view class="list_alltext">联系客服</view>
+        <view class="list_alltext">攒钱计划</view>
       </view>
     </button>
     <button open-type="contact" session-from="weapp" class='nobtn'>
       <view class="list_alllist flex-center">
-        <view class="banner_text">有疑问请找我</view>
+        <view class="banner_text">先定一个小目标</view>
         <image class="list_right" src="../../imges/huise@2x.png"></image>
       </view>
     </button>
@@ -121,51 +94,10 @@
       <image class="list_right" src="../../imges/huise@2x.png"></image>
     </view>
   </view>
-  <view class="banner_list flex-bet" bindtap='gojz' wx:if="{{1==2}}">
-    <view class="list_all flex-center">
-      <image class="list_allimg" src="../../imges/about.png"></image>
-      <view class="list_alltext">捐赠支持</view>
-    </view>
-    <view class="list_alllist flex-center">
-      <view class="banner_text"></view>
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-    </view>
-  </view>
-<view class="banner_list flex-bet" bindtap='goabout' wx:if="{{2==1}}">
-    <view class="list_all flex-center">
-      <image class="list_allimg" src="../../imges/about.png"></image>
-      <view class="list_alltext">关于我们</view>
-    </view>
-    <view class="list_alllist flex-center">
-      <view class="banner_text"></view>
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-    </view>
-  </view>
-</view>
-<view class="banner">
-  <view class="banner_list flex-bet" bindtap="goyaoqing">
-    <view class="list_all flex-center">
-      <image class="list_allimg" src="../../imges/feiji.png"></image>
-      <view class="list_alltext">邀请有礼</view>
-    </view>
-    <view class="list_alllist flex-center">
-      <view class="banner_text">邀请好友,赚取积分</view>
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-    </view>
-  </view>
-
-  <view class="banner_list flex-bet" bindtap='goshop' wx:if="{{1==2}}">
-    <view class="list_all flex-center">
-      <image class="list_allimg" src="../../imges/selle.png"></image>
-      <view class="list_alltext">积分商城</view>
-    </view>
-    <view class="list_alllist flex-center">
-      <view class="banner_text"></view>
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-    </view>
-  </view>
+  
 
 </view>
+
 
 <view class='footer'>
 

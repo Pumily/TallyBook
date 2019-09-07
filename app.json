@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/chart/chart",
     "pages/mbook/mbook",
     "pages/user/user",
     "pages/index/index",
@@ -17,7 +18,8 @@
     "pages/help/help",
     "pages/help/about",
     "pages/jifen/list",
-    "pages/help/jz"
+    "pages/help/jz",
+    "pages/info/info"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,7 +29,7 @@
   },
   "tabBar": {
     "color": "#a9b7b7",
-    "selectedColor": "#11cd6e",
+    "selectedColor": "#0066BA",
     "borderStyle": "white",
     "list": [
       {
@@ -35,6 +37,12 @@
         "iconPath": "imges/jizhang.png",
         "pagePath": "pages/mbook/mbook",
         "text": "记账"
+      },
+      {
+        "selectedIconPath": "imges/jizhang.png",
+        "iconPath": "imges/jizhang.png",
+        "pagePath": "pages/chart/chart",
+        "text": "图表"
       },
       {
         "selectedIconPath": "imges/user.png",
@@ -46,5 +54,6 @@
   },
   "networkTimeout": {
     "request": 10000
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

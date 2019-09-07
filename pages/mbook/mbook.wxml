@@ -80,6 +80,6 @@
   </scroll-view>
 
   <view class='addwater'>
-    <image class='addimg' bindtap="addwater" src='/imges/addwater.png'></image>
+    <image class='addimg' bindtap="addwater" src='/imges/add1.png'></image>
   </view>
 </view>
