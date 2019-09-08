@@ -4,38 +4,7 @@ App({
     var obj = this;
     var siteInfo = require("siteinfo.js");
     // 登录
-    wx.login({
-      success: res => {
-        var _openid = wx.getStorageSync('openid');
-        if (_openid) {
-          obj.globalData.openid = _openid;
-          console.log("缓存获取:" + obj.globalData.openid);
-          if (obj.openidCallback) {
-            obj.openidCallback(_openid);
-          }
-        } else {
-          // 发送 res.code 到后台换取 openId, sessionKey, unionId
-          //调用request请求api转换登录凭证  
-          wx.request({
-            url: siteInfo.apiurl + '/MBook/GetOpenid?code=' + res.code,
-            header: {
-              'content-type': 'application/json'
-            },
-            success: function(res) {
-              obj.globalData.openid = res.data.openid; //获取openid  
-              console.log("URL获取:" + obj.globalData.openid);
-              if (obj.openidCallback) {
-                obj.openidCallback(res.data.openid);
-              }
-              try {
-                wx.setStorageSync('openid', obj.globalData.openid);
-              } catch (e) {}
-            }
-          })
-        }
-      }
-    });
-
+   
     // 获取授权
     //obj.getUserInfoF();
 
@@ -58,33 +27,76 @@ App({
             }
           })
         } else {
-          //console.log("用户没有授权 scope.userInfo");
+         
+          console.log("用户没有授权 scope.userInfo");
+        }
+      }
+    });
+    wx.login({
+      success: res => {
+        var _openid = wx.getStorageSync('openid');
+        if (_openid) {
+          obj.globalData.openid = _openid;
+          console.log("缓存获取:" + obj.globalData.openid);
+          if (obj.openidCallback) {
+            obj.openidCallback(_openid);
+          }
+        } else {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          //调用request请求api转换登录凭证 
+          wx.request({
+            url: 'http://localhost:8080/BookKeep/user/getuserid',
+            header: {
+              'content-type': 'application/json'
+            },
+            data: {
+              appid: 'wx2dd06ecfc846d560',
+              secret: '446eccd174c34fe905c6d57763fa3dac',
+              code: res.code,
+              nickName: "nickName"
+            },
+            success: function (res) {
+              obj.globalData.openid = res.data; //获取openid 
+              console.log("URL获取:" + obj.globalData.openid);
+              if (obj.openidCallback) {
+                obj.openidCallback(res.data.openid);
+              }
+              try {
+                wx.setStorageSync('openid', obj.globalData.openid);
+              } catch (e) { }
+            }
+          })
         }
       }
     });
 
-    // 加载主题
-    var _systhemes = wx.getStorageSync('systhemes');
-    if (!_systhemes) {
-      wx.request({
-        url: siteInfo.apiurl + '/MBook/Getthemes',
-        header: {
-          'content-type': 'application/json'
-        },
-        success: function(res) {
-          console.log(res.data);
-          wx.setStorage({
-            key: "systhemes",
-            data: res.data.message,
-            success: function(res) {
-              console.log('缓存(themes)成功')
-            }
-          });
-        }
-      });
-    }
   },
+  
 
+  bindGetUserInfo(e) {
+    console.log(e.detail.userInfo.nickName);
+  },
+  //   // 加载主题
+  //   var _systhemes = wx.getStorageSync('systhemes');
+  //   if (!_systhemes) {
+  //     wx.request({
+  //       url: siteInfo.apiurl + '/MBook/Getthemes',
+  //       header: {
+  //         'content-type': 'application/json'
+  //       },
+  //       success: function(res) {
+  //         console.log(res.data);
+  //         wx.setStorage({
+  //           key: "systhemes",
+  //           data: res.data.message,
+  //           success: function(res) {
+  //             console.log('缓存(themes)成功')
+  //           }
+  //         });
+  //       }
+  //     });
+  //   }
+  // },
   siteInfo: require("siteinfo.js"),
   globalData: {
     userInfo: null,

@@ -5,11 +5,21 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.1",
-	"appid": "wxcf7f15b21779b77f",
+	"libVersion": "2.8.2",
+	"appid": "wx2dd06ecfc846d560",
 	"projectname": "TallyBook",
 	"isGameTourist": false,
 	"simulatorType": "wechat",

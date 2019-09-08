@@ -37,17 +37,19 @@ Page({
   reload: function() {
     var obj = this;
     wx.request({
-      url: app.siteInfo.apiurl + '/mbook/getuserhome?openid=' + app.globalData.openid,
+      //url: app.siteInfo.apiurl + '/bill/getuserbillinfo?userid=' + app.globalData.openid,
+      url: 'http://localhost:8080/BookKeep/bill/getuserbillinfo?userid=1001',
       header: {
         'content-type': 'application/json'
       },
       success: function(res) {
         console.log(res);
         obj.setData({
-          jifen: res.data.jifen,
-          lianxuday: res.data.lianxuday,
-          sumcount: res.data.sumcount,
-          sumday: res.data.sumday
+
+          // jifen: res.data.jifen,
+          lianxuday: res.data.result,
+          sumcount: res.data.code,
+          sumday: res.data.result2
         })
       }
     })
