@@ -68,6 +68,52 @@ Page({
     wx.showNavigationBarLoading();
     console.log("加载默认数据");
 
+    //月汇总
+    // wx.request({
+    //   url: app.siteInfo.apiurl + '/bill/getsumbymonth', //仅为示例，并非真实的接口地址
+    //   data: {
+    //     // user: app.globalData.openid,
+    //     userid: "1001",
+    //     time: obj.data.yearmonth,
+    //   },
+    //   header: {
+    //     'content-type': 'application/json'
+    //   },
+    //   success: function (res) {
+    //     console.log('月汇总' + res);
+    //     console.log('data数据' + res.data.data);
+    //     console.log('result2数据' + res.data.result2);
+    //     console.log('result数据' + res.data.result);
+    //     obj.setData({
+    //       reload: "none",
+    //     });
+    //     if (res.data.data == null) {
+    //       obj.setData({
+    //         xljt: "block",
+    //       });
+    //     } else {
+    //       obj.setData({
+    //         xljt: "none",
+    //         jieyu: res.data.data,
+    //         sumin: res.data.result,
+    //         sumout: res.data.result2,
+    //       });
+    //     }
+
+    //     // 隐藏导航栏加载框  
+    //     wx.hideNavigationBarLoading();
+    //   },
+    //   fail: function (res) {
+    //     // 隐藏导航栏加载框  
+    //     console.log('失败');
+    //     wx.hideNavigationBarLoading();
+    //     obj.setData({
+    //       reload: "block",
+    //     });
+    //   }
+    // });
+
+    //账单详细
     wx.request({
       url: app.siteInfo.apiurl + '/bill/getuserbillbytime', //仅为示例，并非真实的接口地址
       data: {
@@ -80,6 +126,9 @@ Page({
       },
       success: function(res) {
         console.log('成功'+res);
+        console.log('data数据' + res.data.data);
+        console.log('result2数据' + res.data.result2);
+        console.log('result数据' + res.data.result);
         obj.setData({
           reload: "none",
         });
@@ -92,6 +141,8 @@ Page({
             xljt: "none",
             list: res.data.data,
             thedate: res.data.data[0].createTime,
+            dayin: res.data.result2,
+            dayout: res.data.result,
             // jieyu: res.data.jieyu,
           // sumin: res.data.sumin,
           // sumout: res.data.sumout,

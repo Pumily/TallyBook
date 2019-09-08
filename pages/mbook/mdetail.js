@@ -48,12 +48,14 @@ Page({
       content: '您确定要删除记录？',
       success: function (res) {
         if (res.confirm) {
+          console.log(e.target.dataset.id);
           wx.request({
-            url: app.siteInfo.apiurl + '/mbook/DelWater',
-            data: { id: e.target.dataset.id },
+            url: app.siteInfo.apiurl + '/bill/dellbill',
+            data: { id: options.id },
+            // e.target.dataset.id
             header: { 'content-type': 'application/json' },
             success: function (res) {
-
+              console.log(res.data.msg);
               wx.showToast({
                 title: '删除成功',
                 icon: 'success',

@@ -55,7 +55,7 @@
     <view class='mbox-item'>
       <view class='m-t-title' wx:if="{{thedate!=null}}">
         <view class='m-t-t-left'>{{thedate}}</view>
-        <view class='m-t-t-right'>收入:{{item.dayin}} 支出:{{item.dayout}}</view>
+        <view class='m-t-t-right'>收入:{{dayin}} 支出:{{dayout}}</view>
       </view>
       <view class='m-list' wx:for="{{list}}" wx:key="item">
         <view bindtap='waterdetail' data-id='{{item.billId}}'>
