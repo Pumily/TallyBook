@@ -8,7 +8,7 @@
     <button open-type="getUserInfo" class='nobtn' lang="zh_CN" bindgetuserinfo="onGotUserInfo">
       <view class="flex3">
         <view style='height:160rpx;'>
-          <image class="picture" src="../../imges/t1.jpg"></image>
+          <image class="picture" src="{{userimg}}"></image>
         </view>
         <view class="header_name">
           <label wx:if="{{nickname==''}}">未登录</label>
@@ -26,10 +26,6 @@
         <image class="list_allimg" src="../../imges/order.png"></image>
         <view class="list_alltext">我的信息</view>
        </view>
-     <view class="list_alllist flex-center">
-      <image class="list_right" src="../../imges/huise@2x.png"></image>
-     </view>
-
     </view>
     <view class="list_fukuan flex-bet">
       <view class="flex3 list_collet">

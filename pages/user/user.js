@@ -67,15 +67,6 @@ Page({
     })
   },
 
-  // 去邀请
-  goyaoqing: function() {
-    wx.showToast({
-      title: '即将开放',
-      icon: 'none',
-      duration: 2000
-    })
-  },
-
   gojz: function() {
     wx.navigateTo({
       url: '../help/jz'
@@ -93,13 +84,6 @@ Page({
   goabout: function() {
     wx.navigateTo({
       url: '../help/about'
-    })
-  },
-
-  // 跳转商城
-  goshop: function() {
-    wx.navigateTo({
-      url: '../shop/shop'
     })
   },
 

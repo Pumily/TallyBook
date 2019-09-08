@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/chart/chart",
     "pages/mbook/mbook",
+    "pages/mbook/addwater",
+    "pages/chart/chart",
+
     "pages/user/user",
     "pages/index/index",
     "pages/index/login",
@@ -9,17 +11,15 @@
     "pages/show/show",
     "pages/cards/cards",
     "pages/cards/addcard",
-    "pages/mbook/addwater",
+    
     "pages/mbook/mdetail",
     "pages/text/sendm",
     "pages/cards/carditem",
-    "pages/shop/shop",
     "pages/zhangdan/list",
     "pages/help/help",
     "pages/help/about",
     "pages/jifen/list",
-    "pages/help/jz",
-    "pages/info/info"
+    "pages/help/jz"
   ],
   "window": {
     "backgroundTextStyle": "light",

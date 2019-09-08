@@ -1,10 +1,10 @@
 <!--pages/mbook/addwater.wxml-->
 <form bind:submit="formSubmit" report-submit="true" bindreset="formReset">
   <view class='nav'>
-    <view class='nav-item {{nav_color1}}' bindtap="jizhangmenu" data-item='2'>
+    <view class='nav-item {{nav_color1}}' bindtap="jizhangmenu" data-item='1'>
       支出
     </view>
-    <view class='nav-item  {{nav_color2}}' bindtap="jizhangmenu" data-item='1'>
+    <view class='nav-item  {{nav_color2}}' bindtap="jizhangmenu" data-item='0'>
       收入
     </view>
   </view>
@@ -21,14 +21,14 @@
   </view>
   <view class='content'>
     <scroll-view class='jz-item' scroll-y='true'>
-      <!-- <view class='jz-item-img' wx:for="{{iconlist}}" wx:key="id"> -->
-        <view id='tag{{item.id}}' bindtap='clickimgs' data-tagname='{{item.name}}' data-tagicon='{{item.icon}}' data-tagid='{{item.id}}' data-tagcolor='{{item.iconcolor}}'>
-          <view class='jz-imgs' style='{{item.id==tag_action_id? ("background-color:"+item.iconcolor+";color:#fff") :""}}'>
-            <text class="iconfont {{item.icon}} icon-qita"></text>
+      <view class='jz-item-img' wx:for="{{iconlist}}" wx:key="item">
+        <view id='tag{{item.dictionaryInfoId}}' bindtap='clickimgs' data-tagname='{{item.dictionaryName}}' data-tagicon='{{item.content}}' data-tagid='{{item.dictionaryInfoId}}' data-tagcolor='{{item.sortNum}}'>
+          <view class='jz-imgs' style='{{item.dictionaryInfoId==tag_action_id? ("background-color:"+item.sortNum+";color:#fff") :""}}'>
+            <text class="iconfont {{item.content}}"></text>
           </view>
-          <view class='jz-tag'>{{item.name}}</view>
+          <view class='jz-tag'>{{item.dictionaryName}}</view>
         </view>
-      <!-- </view> -->
+      </view>
     </scroll-view>
   </view>
   <view class='jz-gj'>
@@ -38,7 +38,7 @@
       </picker>
     </view>
     <view class='remark'>
-      <input type='text' name='remark' placeholder='备注' value="{{remark}}"></input>
+      <input type='text' name='remarks' placeholder='备注' value="{{remarks}}"></input>
     </view>
   </view>
   <view class='content btnbox'>
@@ -53,13 +53,11 @@
       </button>
     </view>
     <view class="hide">
-      <input name='user' value='{{_openid}}' />
-      <input name='id' value='{{id}}' />
-      <input name='type' value='{{nav_item}}' />
-      <input name='tag' value='{{nav_name}}' />
-      <input name='tagimg' value='{{nav_icon}}' />
-      <input name='tagid' value='{{tagid}}' />
-      <input name='date' value='{{date}}' />
+      <!-- <input name='userid' value='{{_openid}}' /> -->
+      <input name='userid' value='1001' />
+      <input name='consumptionType' value='{{tagid}}' />
+      <input name='billType' value='{{billType}}' />
+      <input name='createtime' value='{{date}}' />
     </view>
   </view>
 </form>
