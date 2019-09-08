@@ -10,7 +10,7 @@ Page({
   data: {
     pageIndex: 0,
     list: {},
-    yearmonth: util.formatYearMonth(new Date),
+    yearmonth: util.formatDate(new Date),
     yearmonthstr: util.formatDate(new Date),
     jieyu: "0.00",
     sumin: "0.00",
@@ -20,7 +20,10 @@ Page({
     homeimg: '/imges/3.jpg',
     homecolor: '#fff',
     reload: "none",
-    xljt: "none"
+    xljt: "none",
+    thedate:'',
+    theincome:'',
+    thepay:'',
   },
 
   /**
@@ -47,16 +50,16 @@ Page({
         });
       }
     });
+    obj.getPageRequset();
+    // if (app.globalData.openid != "") {
+    //   obj.getPageRequset();
+    // } else {
+    //   app.openidCallback = openid => {
+    //     obj.getPageRequset();
+    //   }
+    // }
 
-    if (app.globalData.openid != "") {
-      obj.getPageRequset();
-    } else {
-      app.openidCallback = openid => {
-        obj.getPageRequset();
-      }
-    }
-
-  },
+  },//
 
   // 加载数据
   getPageRequset: function() {
@@ -66,38 +69,41 @@ Page({
     console.log("加载默认数据");
 
     wx.request({
-      url: app.siteInfo.apiurl + '/mbook/GetMoneyWater', //仅为示例，并非真实的接口地址
+      url: app.siteInfo.apiurl + '/bill/getuserbillbytime', //仅为示例，并非真实的接口地址
       data: {
-        user: app.globalData.openid,
-        yearmonth: obj.data.yearmonth,
+        // user: app.globalData.openid,
+        userid:"1001",
+        time: obj.data.yearmonth,
       },
       header: {
         'content-type': 'application/json'
       },
       success: function(res) {
+        console.log('成功'+res);
         obj.setData({
           reload: "none",
         });
-        if (res.data.message.length == 0) {
+        if (res.data.data == null) {
           obj.setData({
             xljt: "block",
           });
         }else{
           obj.setData({
             xljt: "none",
+            list: res.data.data,
+            thedate: res.data.data[0].createTime,
+            // jieyu: res.data.jieyu,
+          // sumin: res.data.sumin,
+          // sumout: res.data.sumout,
           });
         }
-        obj.setData({
-          list: res.data.message,
-          jieyu: res.data.jieyu,
-          sumin: res.data.sumin,
-          sumout: res.data.sumout,
-        });
+
         // 隐藏导航栏加载框  
         wx.hideNavigationBarLoading();
       },
       fail: function(res) {
         // 隐藏导航栏加载框  
+        console.log('失败' );
         wx.hideNavigationBarLoading();
         obj.setData({
           reload: "block",
@@ -111,7 +117,7 @@ Page({
   sltyearmonth: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail);
     this.setData({
-      yearmonth: util.formatYearMonth(new Date(e.detail.value))
+      yearmonth: e.detail.value
     });
     this.getPageRequset();
   },
@@ -126,6 +132,7 @@ Page({
   // 详情
   waterdetail: function(e) {
     console.log(e);
+    console.log(e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '/pages/mbook/mdetail?id=' + e.currentTarget.dataset.id
     });

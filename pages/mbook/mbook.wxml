@@ -11,7 +11,7 @@
         </label>
       </view>
       <view class='s-t-tag'>
-        <picker class="rili-box" mode="date" fields="month" value='{{yearmonthstr}}' bindchange="sltyearmonth">
+        <picker class="rili-box" mode="date" value='{{yearmonthstr}}' bindchange="sltyearmonth">
           <label class='s-t-tag-box' style='border: 1px solid {{homecolor}};'>
             {{yearmonth}} 资金结余</label>
         </picker>
@@ -52,25 +52,25 @@
       </view>
     </view>
 
-    <view class='mbox-item' wx:for="{{list}}" wx:key="date" wx:for-index="groupindex">
-      <view class='m-t-title'>
-        <view class='m-t-t-left'>{{item.date}}</view>
+    <view class='mbox-item'>
+      <view class='m-t-title' wx:if="{{thedate!=null}}">
+        <view class='m-t-t-left'>{{thedate}}</view>
         <view class='m-t-t-right'>收入:{{item.dayin}} 支出:{{item.dayout}}</view>
       </view>
-      <view class='m-list' wx:for="{{item.mwters}}" wx:key="id" wx:for-item="cell" wx:for-index="cellindex">
-        <view bindtap='waterdetail' data-id='{{cell.id}}'>
+      <view class='m-list' wx:for="{{list}}" wx:key="item">
+        <view bindtap='waterdetail' data-id='{{item.billId}}'>
           <view class='m-l-left'>
-            <view class='iconfont-box m-l-timg' style='background-color: {{cell.tagbg}}'>
-              <label class='iconfont {{cell.tagimg}}'></label>
+            <view class='iconfont-box m-l-timg' style='background-color: {{item.sortNum}}'>
+              <label class='iconfont {{item.content}}'></label>
             </view>
           </view>
           <view class='m-l-right'>
             <view class='m-l-tagname'>
-              {{cell.tag}}
-              <label class='m-l-tagremark'>{{cell.remark}}</label>
+              {{item.dictionaryName}}
+              <label class='m-l-tagremark'>{{item.remarks}}</label>
             </view>
-            <view class='m-l-money'>
-              {{cell.money}}
+            <view class="m-l-money {{item.dictionaryType==1?'fuhao':''}}" style='{{item.dictionaryType==0? ("color:#FA8072") :("color:#90EE90")}}'>
+              {{item.money}}
             </view>
           </view>
         </view>

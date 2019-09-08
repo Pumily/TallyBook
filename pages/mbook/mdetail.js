@@ -18,17 +18,17 @@ Page({
     var obj = this;
     // 显示顶部刷新图标  
     wx.showNavigationBarLoading();
-    console.log(options);
+    console.log(options.id);
     wx.request({
-      url: app.siteInfo.apiurl + '/mbook/GetMoneyDetail', //仅为示例，并非真实的接口地址
+      url: app.siteInfo.apiurl + '/bill/getbybillid', //仅为示例，并非真实的接口地址
       data: {
-        id: options.id,
+        billid: options.id,
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
-        console.log(res.data);
+        console.log(res.data.data);
         obj.setData({
-          mdetail: res.data.message
+          mdetail: res.data.data[0]
         });
         // 隐藏导航栏加载框  
         wx.hideNavigationBarLoading();
