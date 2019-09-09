@@ -41,7 +41,7 @@
 </view>
 <view class='container' wx:for="{{list}}" wx:key="*this">
   <view class='detailed'>
-    <view>{{item.yufen}}</view>
+    <view>{{item.yuefen}}</view>
     <view>{{item.shouru}}</view>
     <view>{{item.zhichu}}</view>
     <view>{{item.jieyu}}</view>

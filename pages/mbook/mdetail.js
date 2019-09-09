@@ -18,17 +18,17 @@ Page({
     var obj = this;
     // 显示顶部刷新图标  
     wx.showNavigationBarLoading();
-    console.log(options);
+    console.log(options.id);
     wx.request({
-      url: app.siteInfo.apiurl + '/mbook/GetMoneyDetail', //仅为示例，并非真实的接口地址
+      url: app.siteInfo.apiurl + '/bill/getbybillid', //仅为示例，并非真实的接口地址
       data: {
-        id: options.id,
+        billid: options.id,
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
-        console.log(res.data);
+        console.log(res.data.data);
         obj.setData({
-          mdetail: res.data.message
+          mdetail: res.data.data[0]
         });
         // 隐藏导航栏加载框  
         wx.hideNavigationBarLoading();
@@ -48,12 +48,14 @@ Page({
       content: '您确定要删除记录？',
       success: function (res) {
         if (res.confirm) {
+          console.log(e.target.dataset.id);
           wx.request({
-            url: app.siteInfo.apiurl + '/mbook/DelWater',
-            data: { id: e.target.dataset.id },
+            url: app.siteInfo.apiurl + '/bill/dellbill',
+            data: { id: options.id },
+            // e.target.dataset.id
             header: { 'content-type': 'application/json' },
             success: function (res) {
-
+              console.log(res.data.msg);
               wx.showToast({
                 title: '删除成功',
                 icon: 'success',

@@ -8,7 +8,7 @@ Page({
    */
   data: {
     homeimg: 'https://tooapi.tooao.cn/images/4.jpg',
-    homecolor: '#fff',
+    homecolor: 'red',
     yearstr: util.formatYear(new Date),
     list: null,
     summoney: 0,
@@ -35,9 +35,10 @@ Page({
   reload: function() {
     var obj = this;
     wx.request({
-      url: app.siteInfo.apiurl + '/mbook/GetZhangDan', //仅为示例，并非真实的接口地址
+      url: app.globalData.apiurl + 'BookKeep/user/getyearbill', //仅为示例，并非真实的接口地址
       data: {
-        openid: app.globalData.openid,
+        //userid: app.globalData.openid,
+        userid: 1004,
         year: obj.data.yearstr,
       },
       header: {
@@ -46,10 +47,10 @@ Page({
       success: function(res) {
         console.log(res);
         obj.setData({
-          list: res.data.message,
-          summoney: res.data.summoney,
-          sumshouru: res.data.sumshouru,
-          sumzhichu: res.data.sumzhichu,
+          list: res.data.data,
+          summoney: res.data.msg,
+          sumshouru: res.data.result2,
+          sumzhichu: res.data.result,
         });
       }
     });

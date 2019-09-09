@@ -1,13 +1,13 @@
 <!--pages/mbook/mdetail.wxml-->
 <view class='m-list'>
   <view class='m-l-left'>
-    <view class='iconfont-box m-l-timg' style='background-color: {{mdetail.tagbg}}'>
-      <label class='iconfont {{mdetail.tagimg}}'></label>
+    <view class='iconfont-box m-l-timg' style='background-color: {{mdetail.sortNum}}'>
+      <label class='iconfont {{mdetail.content}}'></label>
     </view>
   </view>
   <view class='m-l-right'>
     <view class='m-l-tagname'>
-      {{mdetail.tag}}
+      {{mdetail.dictionaryName}}
     </view>
     <view class='m-l-money'>
       {{mdetail.money}}
@@ -22,7 +22,7 @@
       类型
     </view>
     <view class='detail-item-right'>
-      {{mdetail.type}}
+      {{mdetail.typeName}}
     </view>
   </view>
   <view class='detail-item'>
@@ -35,18 +35,10 @@
   </view>
   <view class='detail-item'>
     <view class='detail-item-left'>
-      账户
-    </view>
-    <view class='detail-item-right'>
-      {{mdetail.cardname}}
-    </view>
-  </view>
-  <view class='detail-item'>
-    <view class='detail-item-left'>
       记录时间
     </view>
     <view class='detail-item-right'>
-      {{mdetail.createtime}}
+      {{mdetail.createTime}}
     </view>
   </view>
   <view class='detail-item'>
@@ -54,7 +46,7 @@
       备注
     </view>
     <view class='detail-item-right'>
-      {{mdetail.remark}}
+      {{mdetail.remarks}}
     </view>
   </view>
 </view>

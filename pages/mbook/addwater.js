@@ -44,7 +44,27 @@ Page({
         })
       }
     });
-  },
+
+    if (_model == 1) { //修改默认数据
+      obj.setData({
+        iconlist: _iconlist,
+        nav_icon: _mdetail.tagimg,
+        nav_name: _mdetail.tag,
+        tagid: _mdetail.tagid,
+        tag_action_id: _mdetail.tagid,
+        tag_action_color: _mdetail.tagbg,
+      });
+    } else {
+      obj.setData({
+        iconlist: _iconlist,
+        nav_icon: _iconlist[0].icon,
+        nav_name: _iconlist[0].name,
+        tagid: _iconlist[0].id,
+        tag_action_id: _iconlist[0].id,
+        tag_action_color: _iconlist[0].iconcolor,
+      });
+    }
+  },//onload
   // 点击菜单
   jizhangmenu: function (e) {
     var obj = this;
