@@ -33,20 +33,20 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "imges/jizhang.png",
-        "iconPath": "imges/jizhang.png",
+        "selectedIconPath": "imges//tb1.png",
+        "iconPath": "imges/tb1.png",
         "pagePath": "pages/mbook/mbook",
         "text": "记账"
       },
       {
-        "selectedIconPath": "imges/jizhang.png",
-        "iconPath": "imges/jizhang.png",
+        "selectedIconPath": "imges/tb2.png",
+        "iconPath": "imges/tb2.png",
         "pagePath": "pages/chart/chart",
         "text": "图表"
       },
       {
-        "selectedIconPath": "imges/user.png",
-        "iconPath": "imges/user.png",
+        "selectedIconPath": "imges/tb3.png",
+        "iconPath": "imges/tb3.png",
         "pagePath": "pages/user/user",
         "text": "我的"
       }
